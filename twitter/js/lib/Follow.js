@@ -5,7 +5,10 @@
  * Time: 14:20
  * To change this template use File | Settings | File Templates.
  */
-var Follow = function(followerId, followedId){
+
+goog.provide('twitter.Follow');
+goog.require('tart');
+twitter.Follow = function(followerId, followedId){
     this.id = tart.getUId();
     this.followerId = followerId;
     this.followedId = followedId;
