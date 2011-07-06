@@ -1,7 +1,10 @@
-// Copyright (c) 2009-2010 Techinox Information Technologies (http://www.techinox.com)
-// Techinox Commercial License
-//
-// @author Armagan Amcalar <armagan@tart.com.tr>
+/**
+ * Created by JetBrains PhpStorm.
+ * User: Memo
+ * Date: 05.07.2011
+ * Time: 11:22
+ * To change this template use File | Settings | File Templates.
+ */
 var DirectMessage = function(from , to, body){
     this.id = tart.getUId();
     this.from = from;
