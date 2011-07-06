@@ -1,11 +1,13 @@
-// Copyright (c) 2009-2010 Techinox Information Technologies (http://www.techinox.com)
-// Techinox Commercial License
-//
-// @author Armagan Amcalar <armagan@tart.com.tr>
+/**
+ * Created by JetBrains PhpStorm.
+ * User: Memo
+ * Date: 05.07.2011
+ * Time: 11:25
+ * To change this template use File | Settings | File Templates.
+ */
+var User = function (username,password) {
+ this.id=tart.getUId();
+ this.username = username;
+ this.password = password;
+ };
 
-var User = function(username, password, email) {
-    this.id = tart.getUId();
-    this.username = username;
-    this.password = password;
-    this.email = email;
-}

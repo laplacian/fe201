@@ -2,3 +2,7 @@
 // Techinox Commercial License
 //
 // @author Armagan Amcalar <armagan@tart.com.tr>
+var Session = function (userId) {
+   this.id = tart.getUId();
+   this.userId = userId;
+ };

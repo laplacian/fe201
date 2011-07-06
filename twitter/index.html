@@ -4,13 +4,39 @@
     <title>FE201</title>
     <script type="text/javascript" src="js/third_party/jquery-1.6.2.js"></script>
     <script type="text/javascript" src="js/third_party/tart.js"></script>
-    <script type="text/javascript">
-        var session = localStorage.getItem("session"),
-                user = userModel.getUserById(session.userId);
+    <script type="text/javascript" src="js/model/UserModel.js"></script>
+    <script type="text/javascript" src="js/lib/User.js"></script>
+    <script type="text/javascript" src="js/lib/Session.js"></script>
 
-    </script>
+
 </head>
 <body>
+<h1>Twitter</h1>
+<h3>Login</h3>
 
+<script type="text/javascript">
+function log() {
+        var userModel = new UserModel();
+        var username = document.getElementById('user').value;
+        var password = document.getElementById('pass').value;
+        var deneme = userModel.login(username,password);
+        if(deneme == true) alert("access");
+        else if(deneme == false) alert("you are not a member");
+     }
+
+$(document).ready(function(){
+    var $login = $("<form name='login'>");
+    var $username = $("<input type='text' id='user'>");
+    var $password = $("<input type='password' id='pass'>");
+    var $button = $("<button type='submit' value='Login' style='height: 30px; width: 100px; color: red;' onclick='log()'>");
+    $login.append($username).append($password);
+
+    $("body").append($login).append($button);
+
+
+
+
+});
+</script>
 </body>
 </html>
