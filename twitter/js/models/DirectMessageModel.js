@@ -3,10 +3,35 @@
 //
 // @author Armagan Amcalar <armagan@tart.com.tr>
 
-var DirectMessageModel = function() {
+goog.provide('twitter.DirectMessageModel');
+goog.require('twitter.DirectMessage');
+twitter.DirectMessageModel = function() {
 
-};
-
-DirectMessageModel.prototype.createDirectMessage = function(from, to, body){
-    
 }
+
+twitter.DirectMessageModel.prototype.sendDirectMessage = function (from,to,body) {
+    var directMessage = new twitter.DirectMessage(from.id, to.id, body);
+    localStorage.setObject(directMessage.id,directMessage);
+    };
+
+twitter.DirectMessageModel.prototype.getInboxByUserId = function (userId) {
+    var array = [];
+    for(var directMessage in localStorage) {
+     directMessage = localStorage.getObject(directMessage);
+        if(directMessage && directMessage.userId && directMessage.to.user.id==userId){
+        array.push(directMessage);
+        }
+    }
+    return array;
+    };
+
+twitter.DirectMessageModel.prototype.getSentByUserId = function (userId) {
+    var array = [];
+    for(var directMessage in localStorage) {
+     directMessage = localStorage.getObject(directMessage);
+        if(directMessage && directMessage.userId && directMessage.from.user.id==userId){
+        array.push(directMessage);
+        }
+    }
+    return array;
+    };
