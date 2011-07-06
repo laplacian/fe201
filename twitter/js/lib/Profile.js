@@ -5,7 +5,11 @@
  * Time: 11:36
  * To change this template use File | Settings | File Templates.
  */
-var Profile = function(userId, bio, photoUrl, location){
+
+goog.provide('twitter.Profile');
+goog.require('tart');
+
+twitter.Profile = function(userId, bio, photoUrl, location){
     this.id = tart.getUId();
     this.userId = userId;
     this.bio = bio;
