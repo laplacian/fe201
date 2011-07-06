@@ -5,7 +5,10 @@
  * Time: 11:35
  * To change this template use File | Settings | File Templates.
  */
-var Tweet = function(userId, body){
+
+goog.provide('twitter.Tweet');
+goog.require('tart');
+twitter.Tweet = function(userId, body){
     this.id = tart.getUId();
     this.userId = userId;
     this.body = body;
